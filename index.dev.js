@@ -31,7 +31,19 @@ while (Continuar == "S") {
   }
 
   while (VerificadorPainel == "S") {
-    var seletor = prompt("Painel de Controle:\n  1- Acelerar a nave;\n  2- Desacelerar a nave;\n  3- Trocar de nave;\n  4- Sair.\n  Piloto: ".concat(nomePiloto, "\n  Velocidade atual da nave: ").concat(velocidadeNave, "km/s\n  Modelo da nave: ").concat(naveEspacial, "\n  "));
+    var nomeNaveEspacial = "";
+
+    if (naveEspacial == 1) {
+      nomeNaveEspacial = "Elemental";
+    } else if (naveEspacial == 2) {
+      nomeNaveEspacial = "X-Wing";
+    } else if (naveEspacial == 3) {
+      nomeNaveEspacial = "A-Wing";
+    } else if (naveEspacial == 4) {
+      nomeNaveEspacial = "Estelar Classe Executor";
+    }
+
+    var seletor = prompt("Painel de Controle:\n  1- Acelerar a nave;\n  2- Desacelerar a nave;\n  3- Trocar de nave;\n  4- Sair.\n  Piloto: ".concat(nomePiloto, "\n  Velocidade atual da nave: ").concat(velocidadeNave, "km/s\n  Modelo da nave: ").concat(nomeNaveEspacial, "\n  "));
 
     if (seletor >= 5 || seletor <= 0) {
       alert("Digite somente um n\xFAmero entre 1 e 4");
@@ -114,7 +126,7 @@ while (Continuar == "S") {
       var confirmar = confirm("Deseja confirmar a troca de nave?\n      Sua velocidade passara a ser 0");
 
       if (confirmar == true) {
-        var naveEspacial = prompt("Escolha sua nova nave:\n        1- Elemental(Velocidade maxima de: 200km/s);\n    2- X-Wing(velocidade maxima de: 325km/s);\n    3- A-Wing(velocidade maxima de: 150km/s);\n    4- Estelar Classe Executor(velocidade maxima de: 500km/s).");
+        var naveEspacial = prompt("Escolha sua nova nave:\n      1- Elemental(Velocidade maxima de: 200km/s);\n      2- X-Wing(velocidade maxima de: 325km/s);\n      3- A-Wing(velocidade maxima de: 150km/s);\n      4- Estelar Classe Executor(velocidade maxima de: 500km/s).");
         velocidadeNave = 0;
       } else {
         alert("Voltando...");
@@ -122,7 +134,7 @@ while (Continuar == "S") {
     }
 
     if (seletor == 4) {
-      alert("O nome do piloto \xE9: ".concat(nomePiloto, ". O modelo da nave \xE9: ").concat(naveEspacial, ". E a velocidade da nave \xE9 de: ").concat(velocidadeNave));
+      alert("O nome do piloto \xE9: ".concat(nomePiloto, ". O modelo da nave \xE9: ").concat(nomeNaveEspacial, ". E a velocidade da nave \xE9 de: ").concat(velocidadeNave));
       VerificadorPainel = "N";
       Continuar = confirm("Deseja Reiniciar a opera\xE7\xE3o?");
 

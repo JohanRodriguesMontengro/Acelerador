@@ -30,6 +30,16 @@ while (Continuar == `S`) {
     VelocidadeMaxima = 500;
   }
   while (VerificadorPainel == `S`) {
+    var nomeNaveEspacial = ``;
+    if (naveEspacial == 1) {
+      nomeNaveEspacial = `Elemental`;
+    } else if (naveEspacial == 2) {
+      nomeNaveEspacial = `X-Wing`;
+    } else if (naveEspacial == 3) {
+      nomeNaveEspacial = `A-Wing`;
+    } else if (naveEspacial == 4) {
+      nomeNaveEspacial = `Estelar Classe Executor`;
+    }
     var seletor = prompt(`Painel de Controle:
   1- Acelerar a nave;
   2- Desacelerar a nave;
@@ -37,7 +47,7 @@ while (Continuar == `S`) {
   4- Sair.
   Piloto: ${nomePiloto}
   Velocidade atual da nave: ${velocidadeNave}km/s
-  Modelo da nave: ${naveEspacial}
+  Modelo da nave: ${nomeNaveEspacial}
   `);
 
     if (seletor >= 5 || seletor <= 0) {
@@ -122,26 +132,28 @@ while (Continuar == `S`) {
     }
     if (seletor == 3) {
       var confirmar = confirm(`Deseja confirmar a troca de nave?
-      Sua velocidade passara a ser 0`)
+      Sua velocidade passara a ser 0`);
       if (confirmar == true) {
         var naveEspacial = prompt(`Escolha sua nova nave:
-        1- Elemental(Velocidade maxima de: 200km/s);
-    2- X-Wing(velocidade maxima de: 325km/s);
-    3- A-Wing(velocidade maxima de: 150km/s);
-    4- Estelar Classe Executor(velocidade maxima de: 500km/s).`)
-    velocidadeNave = 0
+      1- Elemental(Velocidade maxima de: 200km/s);
+      2- X-Wing(velocidade maxima de: 325km/s);
+      3- A-Wing(velocidade maxima de: 150km/s);
+      4- Estelar Classe Executor(velocidade maxima de: 500km/s).`);
+        velocidadeNave = 0;
       } else {
-        alert(`Voltando...`)
+        alert(`Voltando...`);
       }
     }
     if (seletor == 4) {
-      alert(`O nome do piloto é: ${nomePiloto}. O modelo da nave é: ${naveEspacial}. E a velocidade da nave é de: ${velocidadeNave}`)
+      alert(
+        `O nome do piloto é: ${nomePiloto}. O modelo da nave é: ${nomeNaveEspacial}. E a velocidade da nave é de: ${velocidadeNave}`
+      );
       VerificadorPainel = `N`;
       Continuar = confirm(`Deseja Reiniciar a operação?`);
-      if(Continuar == true) {
-        Continuar = `S`
-      }else {
-        alert(`Agradecemos o feedback`)
+      if (Continuar == true) {
+        Continuar = `S`;
+      } else {
+        alert(`Agradecemos o feedback`);
       }
     }
   }

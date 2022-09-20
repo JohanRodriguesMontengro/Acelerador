@@ -134,7 +134,7 @@ while (Continuar == "S") {
     }
 
     if (seletor == 4) {
-      alert("O nome do piloto \xE9: ".concat(nomePiloto, ". O modelo da nave \xE9: ").concat(nomeNaveEspacial, ". E a velocidade da nave \xE9 de: ").concat(velocidadeNave));
+      alert("O nome do piloto \xE9: ".concat(nomePiloto, ". O modelo da nave \xE9: ").concat(nomeNaveEspacial, ". E a velocidade da nave \xE9 de: ").concat(velocidadeNave, "km/s\n        "));
       VerificadorPainel = "N";
       Continuar = confirm("Deseja Reiniciar a opera\xE7\xE3o?");
 

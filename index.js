@@ -146,8 +146,8 @@ while (Continuar == `S`) {
     }
     if (seletor == 4) {
       alert(
-        `O nome do piloto é: ${nomePiloto}. O modelo da nave é: ${nomeNaveEspacial}. E a velocidade da nave é de: ${velocidadeNave}`
-      );
+        `O nome do piloto é: ${nomePiloto}. O modelo da nave é: ${nomeNaveEspacial}. E a velocidade da nave é de: ${velocidadeNave}km/s
+        `);
       VerificadorPainel = `N`;
       Continuar = confirm(`Deseja Reiniciar a operação?`);
       if (Continuar == true) {

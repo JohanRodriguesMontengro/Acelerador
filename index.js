@@ -44,14 +44,15 @@ while (Continuar == `S`) {
   1- Acelerar a nave;
   2- Desacelerar a nave;
   3- Trocar de nave;
-  4- Sair.
+  4- Trocar nome Piloto
+  5- Sair.
   Piloto: ${nomePiloto}
   Velocidade atual da nave: ${velocidadeNave}km/s
   Modelo da nave: ${nomeNaveEspacial}
   `);
 
-    if (seletor >= 5 || seletor <= 0) {
-      alert(`Digite somente um número entre 1 e 4`);
+    if (seletor >= 6 || seletor <= 0) {
+      alert(`Digite somente um número entre 1 a 5`);
     }
     while (seletor == 1) {
       var acelerador = prompt(`Digite quanto deseja acelerar
@@ -145,9 +146,18 @@ while (Continuar == `S`) {
       }
     }
     if (seletor == 4) {
+      confirmar = confirm(`Deseja confirmar a troca de nome do piloto?`);
+      if (confirmar == true) {
+        nomePiloto = prompt(`Informe o novo nome do piloto`);
+      } else {
+        alert(`Voltando...`);
+      }
+    }
+    if (seletor == 5) {
       alert(
         `O nome do piloto é: ${nomePiloto}. O modelo da nave é: ${nomeNaveEspacial}. E a velocidade da nave é de: ${velocidadeNave}km/s
-        `);
+        `
+      );
       VerificadorPainel = `N`;
       Continuar = confirm(`Deseja Reiniciar a operação?`);
       if (Continuar == true) {

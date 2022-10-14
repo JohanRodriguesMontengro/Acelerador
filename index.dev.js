@@ -43,10 +43,10 @@ while (Continuar == "S") {
       nomeNaveEspacial = "Estelar Classe Executor";
     }
 
-    var seletor = prompt("Painel de Controle:\n  1- Acelerar a nave;\n  2- Desacelerar a nave;\n  3- Trocar de nave;\n  4- Sair.\n  Piloto: ".concat(nomePiloto, "\n  Velocidade atual da nave: ").concat(velocidadeNave, "km/s\n  Modelo da nave: ").concat(nomeNaveEspacial, "\n  "));
+    var seletor = prompt("Painel de Controle:\n  1- Acelerar a nave;\n  2- Desacelerar a nave;\n  3- Trocar de nave;\n  4- Trocar nome Piloto\n  5- Sair.\n  Piloto: ".concat(nomePiloto, "\n  Velocidade atual da nave: ").concat(velocidadeNave, "km/s\n  Modelo da nave: ").concat(nomeNaveEspacial, "\n  "));
 
-    if (seletor >= 5 || seletor <= 0) {
-      alert("Digite somente um n\xFAmero entre 1 e 4");
+    if (seletor >= 6 || seletor <= 0) {
+      alert("Digite somente um n\xFAmero entre 1 a 5");
     }
 
     while (seletor == 1) {
@@ -134,6 +134,16 @@ while (Continuar == "S") {
     }
 
     if (seletor == 4) {
+      confirmar = confirm("Deseja confirmar a troca de nome do piloto?");
+
+      if (confirmar == true) {
+        nomePiloto = prompt("Informe o novo nome do piloto");
+      } else {
+        alert("Voltando...");
+      }
+    }
+
+    if (seletor == 5) {
       alert("O nome do piloto \xE9: ".concat(nomePiloto, ". O modelo da nave \xE9: ").concat(nomeNaveEspacial, ". E a velocidade da nave \xE9 de: ").concat(velocidadeNave, "km/s\n        "));
       VerificadorPainel = "N";
       Continuar = confirm("Deseja Reiniciar a opera\xE7\xE3o?");
